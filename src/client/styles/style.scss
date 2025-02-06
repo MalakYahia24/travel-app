@@ -1,0 +1,151 @@
+$primary-color: #007bff;
+$secondary-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 12px;
+$box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+// General Styles
+body {
+  font-family: "Arial", sans-serif;
+  background-color: $secondary-color;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+// Main container (Stacked Layout with Header on Top)
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+// Main Heading (Placed at the very top)
+.main-heading {
+  font-size: 2rem;
+  color: $primary-color;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+// Form Section
+.form {
+  background: white;
+  padding: 25px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  width: 80%;
+  text-align: left;
+  
+  h3 {
+    font-size: 1.3rem;
+    color: $primary-color;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  button {
+    width: 100%;
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Trip Info Section (Below the Form)
+.data {
+  display: none;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-align: center;
+  width: 100%;
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 90%;
+    border-radius: $border-radius;
+    margin-top: 20px;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .main-heading {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+  
+  .data {
+    padding: 15px;
+    .pic{
+      width: 300px;
+      img {
+        width:100%
+      }
+    }
+  }
+}

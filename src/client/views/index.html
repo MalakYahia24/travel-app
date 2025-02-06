@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-App</title>
+</head>
+<body>
+     <h2>Where are you travelling and when ?</h2>
+     <!-- input data   -->
+     <form class="form">
+       <div>
+        <label for="city">City</label>
+        <input type="text" name="city" id="city">
+       </div>
+       <div id="cError" role="alert"></div>
+       <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date">
+       </div>
+       <div id="dError" role="alert"></div>
+       <button>Submit</button>
+     </form>
+     <!-- output data -->
+     <div class="data">
+        <h2 id="Remaindays"></h2>
+        <p class="cityName"></p>
+        <p class="weather"></p>
+        <p class="temp"></p>
+        <p class="max-temp"></p>
+        <p class="min-temp"></p>
+        <div class="pic"></div>
+      </div>
+      <!-- Script: Service Worker -->
+
+      <script>
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+
+    </script>
+</body>
+</html>
